@@ -13,6 +13,16 @@ router.get("/team", (req, res, next) => {
       next(err);
     });
 });
+router.get(`/team/:id`, (req, res, next) => {
+  Team.findByPk(id)
+    .then(team => {
+      res.json(team);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 router.post("/team", (req, res, next) =>
   Team.create(req.body)
     .then(result => {
