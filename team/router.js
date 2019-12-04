@@ -13,8 +13,8 @@ router.get("/team", (req, res, next) => {
       next(err);
     });
 });
-router.get(`/team/:id`, (req, res, next) => {
-  Team.findByPk(id)
+router.get('/team/:id', (req, res, next) => {
+  Team.findByPk(req.params.id)
     .then(team => {
       res.json(team);
     })
