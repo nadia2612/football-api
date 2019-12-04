@@ -1,1 +1,1 @@
-le.log(`Listening on :${port}`))
+  .sync()
